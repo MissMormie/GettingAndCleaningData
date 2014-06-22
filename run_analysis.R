@@ -44,7 +44,7 @@ createTidyData <- function(xFile, yFile, subjectFile ) {
     
     # remove no longer needed variables from memory 
     rm(xTest, features, merged, subjectTest, yTest, activityLabels)  
-    return (data)
+    return (testData)
 }
 
 
@@ -62,6 +62,6 @@ if(!file.exists("data")) {
 }
 
 #write tidy train and test data into a file for later use
-write.table(testData,file= "./data/testData.csv", sep=",")
-write.table(testData,file= "./data/trainData.csv", sep=",")
+write.table(testData,file= "./data/testData.txt", sep=",")
+write.table(trainData,file= "./data/trainData.txt", sep=",")
 
