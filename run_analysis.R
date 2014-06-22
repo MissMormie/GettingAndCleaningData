@@ -1,7 +1,3 @@
-# setwd("D:/Coursera/Data scientist specilization/getting and cleaning data/assignment")
-# source("run_analysis.R")
-library(plyr)
-
 if(!file.exists("./UCI HAR Dataset")) {
     stop("Please download the data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  first and place it in the directory './UCI HAR Dataset'")  
 } 
@@ -52,11 +48,13 @@ createTidyData <- function(xFile, yFile, subjectFile ) {
 testData <- createTidyData("./UCI HAR Dataset/test/X_test.txt",
                            "./UCI HAR Dataset/test/subject_test.txt",
                            "./UCI HAR Dataset/test/y_test.txt")
+
 trainData <- createTidyData("./UCI HAR Dataset/train/X_train.txt",
                             "./UCI HAR Dataset/train/subject_train.txt",
                             "./UCI HAR Dataset/train/y_train.txt")
 
-# check if directory exists
+
+# check if data directory exists
 if(!file.exists("data")) {
     dir.create("data")    
 }
