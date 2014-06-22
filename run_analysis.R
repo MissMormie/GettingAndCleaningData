@@ -53,6 +53,7 @@ trainData <- createTidyData("./UCI HAR Dataset/train/X_train.txt",
                             "./UCI HAR Dataset/train/subject_train.txt",
                             "./UCI HAR Dataset/train/y_train.txt")
 
+allData <- rbind(testData, trainData)
 
 # check if data directory exists
 if(!file.exists("data")) {
@@ -60,6 +61,7 @@ if(!file.exists("data")) {
 }
 
 #write tidy train and test data into a file for later use
-write.table(testData,file= "./data/testData.txt", sep=",")
-write.table(trainData,file= "./data/trainData.txt", sep=",")
+#write.table(testData,file= "./data/testData.txt", sep=",")
+#write.table(trainData,file= "./data/trainData.txt", sep=",")
+write.table(testData,file= "./data/fullData.txt", sep=",")
 
